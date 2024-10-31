@@ -1,0 +1,515 @@
+body {
+    /* 初始化 */
+    margin: 0;
+    /* 寬高100 */
+    width: 100%;
+    height: 100vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+* {
+    /* 自動計算，去除padding, border 面積變大效應*/
+    box-sizing: border-box;
+}
+
+/* 去除超連結字體變化 */
+a,
+a:hover,
+a:active,
+a:visited {
+    text-decoration: none;
+}
+
+.nav {
+    background-color: black;
+    /* 寬度20% */
+    width: 365px;
+    height: 100%;
+    /* float排版靠左 */
+    float: left;
+    /* 漂亮內距 */
+    padding: 80px 30px;
+}
+
+@media (max-width:1210px) {
+    .nav {
+        background-color: black;
+        /* 寬度20% */
+        width: 100%;
+        height: 60px;
+        /* 漂亮內距 */
+        padding: 0px 10px 0px 20px;
+        float: none;
+    }
+}
+
+@media (max-width:600px) {
+    .nav {
+        background-color: black;
+        /* 寬度20% */
+        width: 100%;
+        height: 60px;
+        /* 漂亮內距 */
+        padding: 0px 10px;
+        position: relative;
+        float: none;
+    }
+}
+
+.logo {
+    background-color: black;
+    background-image: url(https://fastcdn.hoyoverse.com/mi18n/nap_global/m20240603hy38zhr2tc/upload/b5445d03ceebbcdc5e2326ac38646305_4810991409881119268.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 130px;
+    height: 170px;
+    /* 水平置中 */
+    margin: auto;
+    /* 與下方btn區間隔 */
+    margin-bottom: 20px;
+}
+
+@media (max-width:1210px) {
+    .logo {
+        width: 45px;
+        height: 60px;
+        float: left;
+        margin: 0;
+    }
+}
+
+@media (max-width:600px) {
+    .logo {
+        width: 40px;
+        height: 55px;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+.nav-btn-all {
+    width: 100%;
+}
+
+.nav-btn {
+    /* 位置及大小 */
+    width: 100%;
+    /* 漂亮內距 */
+    padding: 2.5em 0.5em 0.5em 0.5em;
+    /* 文字格式 */
+    color: white;
+    font-size: large;
+    text-align: center;
+    letter-spacing: 0.15em;
+    /* 為了讓底線及符號定位 */
+    position: relative;
+}
+
+@media (max-width:1210px) {
+    .nav-btn-all {
+        width: 345px;
+        float: right;
+        /* 漂亮內距 */
+        padding: 0.5em;
+    }
+
+    .nav-btn {
+        width: auto;
+        /* 漂亮內距 */
+        padding: 1em 0.5em;
+        /* 文字格式 */
+        color: white;
+        font-size: small;
+        /* float */
+        float: left;
+        /* 為了讓底線及符號定位 */
+        position: relative;
+        margin-left: 20px;
+    }
+}
+
+@media (max-width:600px) {
+    .nav-btn-all {
+        background-color: black;
+        /* 漂亮內距 */
+        padding: 1em;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        display: none;
+    }
+
+    .nav-btn {
+        width: auto;
+        /* 漂亮內距 */
+        padding: 1em 0.5em;
+        /* 文字格式 */
+        font-size: x-small;
+    }
+}
+
+.nav-btn::after {
+    position: absolute;
+    /* 一定要有這行才會作用 */
+    content: '✨';
+    top: 20px;
+    right: 10px;
+    /* 預設不顯示 */
+    display: none;
+}
+
+.nav-btn::before {
+    position: absolute;
+    content: '';
+    background-color: white;
+    width: 50px;
+    height: 3px;
+    bottom: -0.5em;
+    left: calc(50% - 25px);
+    transition: all 0.5s;
+}
+
+@media (max-width:1210px) {
+    .nav-btn::after {
+        top: 0px;
+        right: 0px;
+    }
+
+    .nav-btn::before {
+        width: 30px;
+        height: 1px;
+        bottom: 0.5em;
+        left: calc(50% - 15px);
+    }
+}
+
+@media (max-width:600px) {
+    .nav-btn::after {
+        top: 0px;
+        right: 0px;
+    }
+
+    .nav-btn::before {
+        width: 20px;
+        height: 1px;
+        bottom: 0.5em;
+        left: calc(50% - 10px);
+    }
+}
+
+.container {
+    background-color: black;
+    background-image: url(https://act.hoyoverse.com/zzz/event/e20240702landing-hcklq6/images/bg.04dd4630..jpg);
+    background-size: cover;
+    width: calc(100% - 365px);
+    height: 100%;
+    padding-top: calc((100vh - 570px)/2);
+    float: left;
+}
+
+.content {
+    width: 960px;
+    height: 570px;
+    margin: auto;
+}
+
+@media (max-width:1500px) {
+    .content {
+        width: 800px;
+    }
+}
+
+@media (max-width:1210px) {
+    .container {
+        width: 100%;
+        height: calc(100% - 60px);
+        padding-top: calc((100vh - 60px - 820px)/2);
+        float: none;
+    }
+
+    .content {
+        width: 90%;
+        height: 820px;
+        margin: auto;
+    }
+}
+
+@media (max-width:600px) {
+    .container {
+        width: 100%;
+        height: calc(100% - 60px);
+        padding: 0;
+        float: none;
+    }
+
+    .content {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.img {
+    background-color: darkslategray;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* 扣除間隔在除三等份 */
+    width: calc((100% - 10px*2)/3);
+    height: 100%;
+    float: left;
+}
+
+.img-1 {
+    background-image: url(https://fastcdn.hoyoverse.com/content-v2/nap/113612/aba218021520e66e0dcfac1114df4a71_8151821799162446072.png);
+    background-position: 45%;
+}
+
+.img-2 {
+    background-image: url(https://fastcdn.hoyoverse.com/content-v2/nap/113671/ac73015ad575dd0093228a46eebd79d9_361609884774113013.png);
+    /* 上下不推左右推10px */
+    margin: 0 10px;
+}
+
+.img-3 {
+    background-image: url(https://fastcdn.hoyoverse.com/content-v2/nap/124310/168da80aafe64cb42bbbd12575208329_1629537670400613754.png);
+    background-position: 55%;
+}
+
+@media (max-width:1500px) {
+    .img {
+        width: calc(50% - 5px);
+        /* background-position: center; */
+        background-size: 300%;
+        height: calc(100%/2);
+    }
+
+    .img-1 {
+        width: 100%;
+        height: calc(100%/2 - 10px);
+        margin-bottom: 10px;
+        background-size: 150%;
+        background-position: 15% 20%;
+    }
+
+    .img-2 {
+        /* 上下不推左右推10px */
+        margin: 0 10px 0 0;
+        background-position: 50% 15%;
+    }
+
+    .img-3 {
+        background-position: 60% 20%;
+    }
+}
+
+@media (max-width:1210px) {
+    .img {
+        background-size: 300%;
+        width: calc(50% - 5px);
+        height: calc(100%/2);
+        float: left;
+    }
+
+    .img-1 {
+        width: 100%;
+        height: calc(100%/2 - 10px);
+        margin-bottom: 10px;
+        background-size: 150%;
+        background-position: 15% 20%;
+    }
+
+    .img-2 {
+        margin-right: 0 10px 0 0;
+        background-position: 50% 15%;
+    }
+
+    .img-3 {
+        background-position: 60% 20%;
+    }
+}
+
+@media (max-width:600px) {
+    .img {
+        background-size: 150%;
+        width: 100%;
+        height: calc((100%/3) - 5px);
+        margin-bottom: 5px;
+        float: none;
+    }
+
+    .img-1 {
+        background-position: 15% 20%;
+    }
+
+    .img-2 {
+        background-position: 50% 15%;
+        margin: 0 0 5px 0;
+    }
+
+    .img-3 {
+        background-position: 60% 20%;
+    }
+}
+
+.img:hover {
+    transform: translate(0%, -5%);
+    transition: 1s;
+}
+
+.img-1:hover {
+    background-size: 600%;
+    background-position: 43% 30%;
+}
+
+.img-2:hover {
+    background-size: 600%;
+    background-position: 50% 20%;
+}
+
+.img-3:hover {
+    background-size: 600%;
+    background-position: 55% 30%;
+}
+
+@media (max-width:1500px) {
+    .img:hover {
+        transform: scale(1.01);
+    }
+
+    .img-1:hover {
+        background-size: 200%;
+        background-position: 20% 30%;
+    }
+
+    .img-2:hover {
+        background-size: 400%;
+    }
+
+    .img-3:hover {
+        background-size: 400%;
+        background-position: 60% 25%;
+    }
+}
+
+@media (max-width:1210px) {
+    .img:hover {
+        transform: scale(1.01);
+    }
+
+    .img-1:hover {
+        background-size: 200%;
+        background-position: 20% 30%;
+    }
+
+    .img-2:hover {
+        background-size: 400%;
+        background-position: 50% 20%;
+    }
+
+    .img-3:hover {
+        background-size: 400%;
+        background-position: 60% 25%;
+    }
+}
+
+@media (max-width:600px) {
+    .img:hover {
+        transform: none;
+        transition: 1s;
+    }
+
+    .img-1:hover {
+        background-size: 200%;
+        background-position: 20% 30%;
+    }
+
+    .img-2:hover {
+        background-size: 400%;
+        background-position: 50% 20%;
+    }
+
+    .img-3:hover {
+        background-size: 400%;
+        background-position: 60% 25%;
+    }
+}
+
+.nav-btn:hover::before {
+    transform: scaleX(2);
+}
+
+.nav-btn:active::after {
+    display: block;
+}
+
+.ham-btn {
+    display: none;
+}
+
+@media (max-width:600px) {
+    .ham-btn {
+        background-color: black;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        /* 讓label的顯示模式從行內元素轉為區塊層級 */
+        display: block;
+    }
+
+    /* class選擇器 空格代表後代 */
+    /* ham-btn中的line */
+    .ham-btn .line {
+        background-color: white;
+        width: 75%;
+        height: 3px;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: 0.5s;
+    }
+
+    .ham-btn .line-1 {
+        top: 25%;
+    }
+
+    .ham-btn .line-2 {
+        top: 50%;
+    }
+
+    .ham-btn .line-3 {
+        top: 75%;
+    }
+
+    /* check勾選之後的動作 */
+    /* 在本人之後或之右相鄰的"第一個"兄弟(相同父層)用+號連接 */
+    /* ham-btn-swich的兄弟=>label(包著ham-btn)的子層(用空格隔開)=>line-1 */
+    #ham-btn-swich:checked+.ham-btn .line-1 {
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    #ham-btn-swich:checked+.ham-btn .line-2 {
+        display: none;
+    }
+
+    #ham-btn-swich:checked+.ham-btn .line-3 {
+        top: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    /* 在本人之後所有的兄弟(相同父層)中指定，用~號連接 */
+    /* 所以按下去顯示的menu必須和按鈕在同一個父層內!!!!!!!! */
+    #ham-btn-swich:checked~.nav-btn-all {
+        display: block;
+    }
+}
+
+
+
